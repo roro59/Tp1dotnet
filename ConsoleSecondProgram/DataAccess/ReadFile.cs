@@ -38,12 +38,20 @@ namespace ConsoleSecondProgram.DataAccess
             List<DBO.Person> res = new List<DBO.Person>();
             String s;
             String[] elt;
-            do
+            try
             {
-                s = _file.ReadLine();
-                elt = s.Split(',');
-                res.Add(new DBO.Person(elt[0], elt[1], elt[2]));
-            } while (!_file.EndOfStream);
+                do
+                {
+                    s = _file.ReadLine();
+                    elt = s.Split(',');
+                    res.Add(new DBO.Person(elt[0], elt[1], elt[2]));
+                } while (!_file.EndOfStream);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Erreur durant la lecture" + e.Message);
+                throw;
+            }
 
             return res;
         }
