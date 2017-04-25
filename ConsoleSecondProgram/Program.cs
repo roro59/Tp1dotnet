@@ -13,6 +13,8 @@ namespace ConsoleSecondProgram
                        Console.WriteLine("name: " + item.Name + " prenom: " + item.Firstname + " address: " + item.Address);
                    }
                    Console.ReadLine();*/
+            BusinessManagement.Person.WriteData(res);
         }
+        
     }
 }
