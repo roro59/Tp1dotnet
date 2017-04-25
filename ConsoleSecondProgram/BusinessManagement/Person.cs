@@ -7,8 +7,8 @@ namespace ConsoleSecondProgram.BusinessManagement
   {
     public static List<DBO.Person> ReadData(string filename)
     {
-
-      using (DataAccess.ReadFile reader = new DataAccess.ReadFile(filename))
+            DataAccess.ReadFile reader = new DataAccess.ReadFile(filename);  
+      using (reader)
       {
         reader.Initialize();
         return reader.ReadData();

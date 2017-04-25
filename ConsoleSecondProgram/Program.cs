@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ConsoleSecondProgram
 {
-  class MainClass
-  {
-    public static void Main(string[] args)
+    internal class MainClass
     {
-      List<DBO.Person> res = new List<DBO.Person>();
-      BusinessManagement.Person.ReadData(args[0]);
+        public static void Main(string[] args)
+        {
+            List<DBO.Person> res = new List<DBO.Person>();
+            res = BusinessManagement.Person.ReadData(args[0]);
+            /*       foreach (var item in res)
+                   {
+                       Console.WriteLine("name: " + item.Name + " prenom: " + item.Firstname + " address: " + item.Address);
+                   }
+                   Console.ReadLine();*/
+        }
     }
-  }
 }

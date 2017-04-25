@@ -20,12 +20,12 @@ namespace ConsoleSecondProgram.DataAccess
 
     public ReadFile(String name)
     {
-      this.file = file;
+      this.file = name;
     }
 
     public void Initialize()
     {
-      stream = new StreamReader(file);
+     stream = new StreamReader(file);
     }
 
     public void Dispose()
@@ -41,7 +41,7 @@ namespace ConsoleSecondProgram.DataAccess
       do
       {
         s = stream.ReadLine();
-        elt = s.Split(';');
+        elt = s.Split(',');
         res.Add(new DBO.Person(elt[0], elt[1], elt[2]));
       } while (!stream.EndOfStream);
 
